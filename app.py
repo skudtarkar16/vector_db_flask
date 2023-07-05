@@ -4,7 +4,7 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings, SentenceTransformerEmbeddings
 
 app = Flask(__name__)
-embeddings = HuggingFaceEmbeddings(model_name="intfloat/e5-base-v2")
+embeddings = HuggingFaceEmbeddings(model_name="models/e5_base_v2")
 print("\nLoaded the model\n")
 vector_db_path = "faiss_collection/faiss_e5_base"
 faiss_db = FAISS.load_local(vector_db_path, embeddings)
